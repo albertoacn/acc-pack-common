@@ -15,8 +15,8 @@ pod cache clean --all
 pod install
 
 if [ "$task" == "-b" ]; then
-  #xcodebuild clean test -workspace "OTAcceleratorPackUtilProject.xcworkspace" -scheme "OTAcceleratorPackUtilTests" -sdk "iphonesimulator10.0" -destination "OS=10.0,name=iPhone 6 Plus" -configuration Debug
-  xcodebuild clean build -workspace "OTAcceleratorPackUtilProject.xcworkspace" -scheme "OTAcceleratorPackUtil"
+  #xcodebuild clean test -workspace "${WORKSPACE_NAME}" -scheme "${SCHEME_NAME}" -sdk "iphonesimulator10.0" -destination "OS=10.0,name=iPhone 6 Plus" -configuration Debug
+  xcodebuild clean build -workspace "${WORKSPACE_NAME}" -scheme "${SCHEME_NAME}"
 fi
 
 if [ "$task" == "-d" ]; then
