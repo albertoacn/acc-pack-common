@@ -28,30 +28,13 @@ gulp.task('js', function () {
   return merge(accPack, min);
 });
 
-// gulp.task('css', function () {
-//   return gulp.src('css/*.css')
-//     .pipe(importCss())
-//     .pipe(gulp.dest(dist));
-// });
-
-// gulp.task('images', function () {
-//   return gulp.src(
-//       [
-//         'images/**',
-//       ], { base: 'images/' })
-//     .pipe(gulp.dest('dist/images'));
-// });
-
 gulp.task('zip', function () {
   return gulp.src(
     [
-      // 'dist/*.css',
-      // 'dist/images/**',
       'dist/sdkWrapper.js'
     ], { base: 'dist/' })
   .pipe(zip('opentok-sdk-wrapper-1.0.0.zip'))
   .pipe(gulp.dest(dist));
 });
 
-//gulp.task('dist', ['js', 'css', 'images', 'zip']);
 gulp.task('dist', ['js', 'zip']);
